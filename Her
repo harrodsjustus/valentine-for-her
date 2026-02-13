@@ -1,0 +1,107 @@
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
+
+<style>
+body {
+  margin:0;
+  text-align:center;
+  font-family: 'Arial';
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color:white;
+  overflow:hidden;
+}
+
+h1 {
+  margin-top:100px;
+  font-size:40px;
+}
+
+button {
+  padding:15px 30px;
+  font-size:20px;
+  border:none;
+  border-radius:40px;
+  cursor:pointer;
+  margin:20px;
+  transition:0.3s;
+}
+
+#yes {
+  background:#4CAF50;
+  color:white;
+}
+
+#no {
+  background:#f44336;
+  color:white;
+  position:absolute;
+}
+
+img {
+  width:250px;
+  border-radius:20px;
+  margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Hey Beautiful ❤️</h1>
+<p>Before you continue... I need to ask you something.</p>
+
+<button onclick="startGame()">Click Here</button>
+
+<audio autoplay loop>
+  <source src="yourmusic.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+function startGame(){
+  document.body.innerHTML = `
+    <h1>Do you love me? ❤️</h1>
+    <button id="yes" onclick="question2()">YES</button>
+    <button id="no" onmouseover="moveButton()">NO</button>
+  `;
+}
+
+function moveButton(){
+  var button = document.getElementById("no");
+  var x = Math.random() * (window.innerWidth - 100);
+  var y = Math.random() * (window.innerHeight - 50);
+  button.style.left = x + "px";
+  button.style.top = y + "px";
+}
+
+function question2(){
+  document.body.innerHTML = `
+    <h1>Are you sure I’m the best boyfriend ever? 😏</h1>
+    <button id="yes" onclick="finalQuestion()">YES OBVIOUSLY</button>
+    <button id="no" onmouseover="moveButton()">NO</button>
+  `;
+}
+
+function finalQuestion(){
+  document.body.innerHTML = `
+    <h1 style="font-size:50px;">Will You Be My Valentine? 💌</h1>
+    <button onclick="celebrate()" style="background:#ff1744;color:white;font-size:25px;">YES ❤️</button>
+  `;
+}
+
+function celebrate(){
+  document.body.innerHTML = `
+    <h1 style="font-size:60px;">YAYYYYY ❤️🎉</h1>
+    <p>I Love You More Than Words Can Say.</p>
+  `;
+}
+
+</script>
+
+</body>
+</html>
+yourmusic.mp3
